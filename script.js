@@ -67,63 +67,6 @@ Sent from Always Demon Labs website`;
   }, 500);
 });
 
-/* MEETING CONFIRMATION */
-
-const meetingConfirm = document.getElementById("meetingConfirm");
-const meetingMessage = document.getElementById("meetingMessage");
-const meetingTime = document.getElementById("meetingTime");
-
-meetingConfirm.addEventListener("click", () => {
-
-  const selectedType =
-    document.querySelector(".meeting-type.active strong").textContent;
-
-  const duration =
-    document.querySelector(".meeting-type.active").dataset.duration;
-
-  const date = meetingDate.value;
-  const time = meetingTime.value;
-
-  if (!date || !time) {
-    meetingMessage.style.display = "block";
-    meetingMessage.textContent =
-      "Please select both a date and time.";
-    return;
-  }
-
-  const formattedDate =
-    new Date(`${date}T00:00:00`).toLocaleDateString("en-IN", {
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
-
-  const subject = encodeURIComponent(
-    `Meeting Request — ${selectedType}`
-  );
-
-  const body = encodeURIComponent(
-`Meeting request
-
-Meeting type: ${selectedType}
-Duration: ${duration}
-Preferred date: ${formattedDate}
-Preferred time: ${time}
-
-Please confirm the meeting availability.`
-  );
-
-  meetingMessage.style.display = "block";
-
-  meetingMessage.innerHTML =
-    `Meeting request prepared for <strong>${formattedDate}</strong> at <strong>${time}</strong>.<br>
-    Opening email to complete the request...`;
-
-  setTimeout(() => {
-    window.location.href =
-      `mailto:Alwaysdemonyash@gmail.com?subject=${subject}&body=${body}`;
-  }, 700);
-});
 
 
 /* CURRENT YEAR */
