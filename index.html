@@ -1,4 +1,5 @@
-<html>
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -412,173 +413,84 @@
       </form>
     </section>
 
-<section class="meeting-section" id="meeting">
+    <!-- MEETING -->
+    <section class="meeting-section" id="meeting">
 
-  <div class="meeting-intro">
-    <span class="section-label">06 / MEETING</span>
+      <div class="meeting-intro">
+        <span class="section-label">06 / MEETING</span>
 
-    <h2>Let's talk about your project.</h2>
+        <h2>Let's talk about your project.</h2>
 
-    <p>
-      Choose a meeting type and preferred time. We'll confirm the meeting
-      through WhatsApp.
-    </p>
-  </div>
+        <p>
+          Choose the conversation that best matches what you need.
+        </p>
+      </div>
 
-  <div class="meeting-container">
+      <div class="meeting-container">
 
-    <!-- MEETING TYPE -->
-    <div class="meeting-types">
+        <div class="meeting-types">
 
-      <button type="button" class="meeting-type active"
-        data-type="Discovery Call"
-        data-duration="30 min">
+          <button class="meeting-type active" data-duration="30 min">
+            <span class="radio-circle"></span>
+            <div>
+              <strong>Discovery Call</strong>
+              <small>30 min</small>
+            </div>
+          </button>
 
-        <span class="radio-circle"></span>
+          <button class="meeting-type" data-duration="45 min">
+            <span class="radio-circle"></span>
+            <div>
+              <strong>Technical Consultation</strong>
+              <small>45 min</small>
+            </div>
+          </button>
 
-        <div>
-          <strong>Discovery Call</strong>
-          <small>30 min</small>
+          <button class="meeting-type" data-duration="30 min">
+            <span class="radio-circle"></span>
+            <div>
+              <strong>Project Discussion</strong>
+              <small>30 min</small>
+            </div>
+          </button>
+
         </div>
 
-      </button>
+        <div class="meeting-calendar">
 
-      <button type="button" class="meeting-type"
-        data-type="Technical Consultation"
-        data-duration="45 min">
+          <label for="meetingDate">Select date</label>
+          <input type="date" id="meetingDate">
 
-        <span class="radio-circle"></span>
+          <label for="meetingTime">Select time</label>
 
-        <div>
-          <strong>Technical Consultation</strong>
-          <small>45 min</small>
+          <select id="meetingTime">
+            <option value="">Select a time</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+            <option>6:00 PM</option>
+          </select>
+
+          <button id="meetingConfirm" class="btn btn-primary">
+            Confirm Meeting
+          </button>
+
+          <p class="calendar-note">
+            Demo booking interface. Connect Calendly, Cal.com or another
+            scheduling provider before accepting real bookings.
+          </p>
+
+          <div id="meetingMessage" class="meeting-message"></div>
+
         </div>
 
-      </button>
-
-      <button type="button" class="meeting-type"
-        data-type="Project Discussion"
-        data-duration="30 min">
-
-        <span class="radio-circle"></span>
-
-        <div>
-          <strong>Project Discussion</strong>
-          <small>30 min</small>
-        </div>
-
-      </button>
-
-    </div>
-
-
-    <!-- MEETING DETAILS -->
-    <div class="meeting-calendar">
-
-      <div class="form-group">
-        <label for="meetingName">Your name *</label>
-
-        <input
-          type="text"
-          id="meetingName"
-          placeholder="Your name"
-          required
-        >
       </div>
+    </section>
 
-
-      <div class="form-group">
-        <label for="meetingEmail">Email *</label>
-
-        <input
-          type="email"
-          id="meetingEmail"
-          placeholder="you@example.com"
-          required
-        >
-      </div>
-
-
-      <div class="form-group">
-        <label for="meetingCompany">Business / Company</label>
-
-        <input
-          type="text"
-          id="meetingCompany"
-          placeholder="Your business name"
-        >
-      </div>
-
-
-      <div class="form-group">
-        <label for="meetingDate">Select date *</label>
-
-        <input
-          type="date"
-          id="meetingDate"
-          required
-        >
-      </div>
-
-
-      <div class="form-group">
-        <label for="meetingTime">Select time *</label>
-
-        <select id="meetingTime" required>
-
-          <option value="">Select a time</option>
-
-          <option value="10:00 AM">10:00 AM</option>
-          <option value="11:00 AM">11:00 AM</option>
-          <option value="12:00 PM">12:00 PM</option>
-          <option value="2:00 PM">2:00 PM</option>
-          <option value="3:00 PM">3:00 PM</option>
-          <option value="4:00 PM">4:00 PM</option>
-          <option value="5:00 PM">5:00 PM</option>
-          <option value="6:00 PM">6:00 PM</option>
-
-        </select>
-      </div>
-
-
-      <div class="form-group">
-
-        <label for="meetingMessage">
-          What would you like to discuss?
-        </label>
-
-        <textarea
-          id="meetingTopic"
-          rows="4"
-          placeholder="Briefly describe what you'd like to discuss..."
-        ></textarea>
-
-      </div>
-
-
-      <button
-        type="button"
-        id="meetingConfirm"
-        class="btn btn-primary"
-      >
-        Confirm Meeting →
-      </button>
-
-
-      <div
-        id="meetingSuccess"
-        class="meeting-message"
-      ></div>
-
-      <p class="calendar-note">
-        After confirmation, WhatsApp will open with your meeting
-        details already filled in. You can review and send the message.
-      </p>
-
-    </div>
-
-  </div>
-</section>
     <!-- CONTACT -->
     <section class="contact-section" id="contact">
       <div class="contact-content">
@@ -605,10 +517,13 @@
 
         <a href="mailto:Alwaysdemonyash@gmail.com">
           Alwaysdemonyash@gmail.com
-     <a href="https://wa.me/918400776050" target="_blank" rel="noopener">
-  WhatsApp: +91 8400776050
-</a>
-<div class="social-links">
+        </a>
+
+        <a href="https://wa.me/918400776050" target="_blank" rel="noopener">
+          WhatsApp: +91 8400776050
+        </a>
+
+      <div class="social-links">
   <a href="https://www.instagram.com/yash_pal_112/" target="_blank" rel="noopener">
     Instagram ↗
   </a>
